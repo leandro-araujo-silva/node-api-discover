@@ -9,17 +9,20 @@ app.use(cors())
 
 app.use(express.json())
 
-let users = [{
-  id: 1,
-  name: "Jakeliny Gracielly",
-  avatar: "https://avatars.githubusercontent.com/u/17316392?v=4",
-  city: "São Paulo"
-}]
+let users = [
+  {
+    id: 1,
+    name: 'Leandro Araújo',
+    avatar: 'https://avatars.githubusercontent.com/u/78456599?v=4',
+    city: 'Viçosa'
+  }
+]
 
-
-app.route('/api').get((req, res) => res.json({
-  users
-}))
+app.route('/api').get((req, res) =>
+  res.json({
+    users
+  })
+)
 
 app.route('/api/:id').get((req, res) => {
   const userId = req.params.id
@@ -67,7 +70,7 @@ app.route('/api/:id').put((req, res) => {
     return user
   })
 
-  res.json("Updated user")
+  res.json('Updated user')
 })
 
 app.route('/api/:id').delete((req, res) => {
